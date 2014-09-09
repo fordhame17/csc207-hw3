@@ -11,7 +11,7 @@ public class PartA
       {
         if ((b * i) == a)
           return true;
-      }
+      } // for
     return false;
   } // isMultiple(long, long)
 
@@ -28,13 +28,13 @@ public class PartA
         while ((powerValue * 2) < value)
           {
             powerValue = powerValue * 2;
-          }
+          } // while
         value = value - powerValue;
-      }
+      } // while greater than 1
     if (value == 1)
       {
         return true;
-      }
+      } // if equal to 1
     return false;
   } // isOdd(int)
   
@@ -47,15 +47,15 @@ public class PartA
     if (n<=0)
       {
         return 0;
-      }
+      } // if pos n
     if (isOdd(n))
       {
         return ((n - 1) / 2) * ((n - 1) / 2);
-      }
+      } // if odd n
     else
       {
         return n * n / 4;
-      }
+      } // else if even n
   } // oddSumTo(int)
 
   /**
@@ -72,9 +72,9 @@ public class PartA
             if (PartA.isOdd(valueproduct))
               {
                 return true;
-              }
-          }
-      }
+              } // if odd
+          } // for row 2
+      } // for row 1
     return false;
   } // isOddProd(int[])
   
@@ -90,9 +90,9 @@ public class PartA
             if (ints[i]==ints[j])
               {
                 return false;
-              }
-          }
-      }
+              } // if equal
+          } // for row 2
+      } // for row 1
     return true; 
   } // allDistinct(int[])
   
@@ -111,7 +111,7 @@ public class PartA
         ints[j]=Holder;
         i++;
         j--;
-      }
+      } // while i less than j
     return ints;
   } // reverseInts(int[])
 } // PartA
