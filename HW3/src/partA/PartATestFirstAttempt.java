@@ -11,6 +11,10 @@ public class PartATestFirstAttempt
   public void test_isOdd()
     throws Exception
   {
+    /* We loop through all integers, testing isOdd.
+     * counter=0 means the integer is even, counter=1
+     * indicates that it is odd.
+     */
     long counter = 0;
     for (int i = Integer.MIN_VALUE; i <= Integer.MAX_VALUE; i++)
       {
@@ -31,6 +35,7 @@ public class PartATestFirstAttempt
   public void test_isMultiple()
     throws Exception
   {
+    //We test isMultiple for all integers beween -20, 20
     for (long i=-20;i<20;i++)
       {
         for (long j=-20;j<20;j++)//i=j*k
@@ -99,6 +104,11 @@ public class PartATestFirstAttempt
   public void test_reverseInts()
     throws Exception
   {
+    /*
+     * We generate arrays of every length, from the empty array
+     * up to arrays with ten elements. We make sure the arrays
+     * which result are identical to reversed arrays.
+     */
     for (int i = 0; i < 10; i++)
       {
         int[] arrayToTest = new int[i];
