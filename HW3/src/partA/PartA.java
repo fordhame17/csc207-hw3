@@ -25,7 +25,13 @@ public class PartA
     while (value > 1)
       {
         powerValue = 2;
-        while ((powerValue * 2) < value)
+        /*
+         * To speed up isOdd, we multiply 2 by a factor of two until it is 
+         * large enough to quickly decrement value. To deal with the fact
+         * that there is a maximum integer size, we put a max on
+         * powerValue
+         */ 
+        while ((powerValue * 2) < value&&powerValue<134217728)
           {
             powerValue = powerValue * 2;
           } // while
@@ -104,6 +110,10 @@ public class PartA
     int i=0;
     int j=ints.length-1;
     int Holder;
+    /*
+     * We swap elements, first the first and last element, and moving
+     * inwards from there
+     */
     while (i<j)
       {
         Holder=ints[i];
