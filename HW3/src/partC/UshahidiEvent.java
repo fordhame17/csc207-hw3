@@ -1,8 +1,16 @@
 package partC;
 
+
+
+/*
+ * The UshahidiEvent class holds information about an event. By utilizing the
+ * UshahidiEvent class, external programs can easily create, upload and
+ * download events to the Ushahidi website
+ */
 public class UshahidiEvent
 {
-  private UshahidiUser eventCreator;
+  private int eventID;
+  public UshahidiUser eventCreator;
   public String eventTitle;
   public String locationName;
   public String eventDescription;
@@ -11,127 +19,160 @@ public class UshahidiEvent
   public int category;
   public int priority;
   public URLString newsSourceLink;
-  public URLString ExternalVideoLink;
+  public URLString externalVideoLink;
   
-  /**
-   * Get the title of the event
+  //Creates a UshahidiEvent object with an eventCreator
+  public UshahidiEvent(UshahidiUser eventCreator)
+  {
+  }
+  
+  //Creates a UshahidiEvent object with an eventCreator and a title
+  public UshahidiEvent(UshahidiUser eventCreator, String eventTitle)
+  {
+  }
+  
+  /*
+   * Tries to connect with the server and get a unique user
+   * ID assigned to the UshahidiUser object. Returns eventID on
+   * success, false otherwise
    */
-  public String getEventTitle()
+  public boolean SetEventID(URLString connectionString)
+  {
+    return 0;
+  }
+  
+  
+  /*
+   * Returns the current UshahidiEvent's EventID, returns the UshahidiEvent's
+   * eventID on success, 0 otherwise
+   */
+  public int GetEventID()
+  {
+    return 0;
+  }
+  
+  
+  /*
+   * Uploads the event in question to Ushahidi, returns true if success,
+   * false otherwise. The eventID must be assigned for the method to return true
+   */
+  public Boolean UploadEvent(URLString connectionString)
+  {
+    return false;
+  }
+  
+  
+  /*
+   * Fills the current UshahidiEvent object with information downloaded, 
+   * returns true on success
+   */
+  public Boolean DownloadEvent(URLString connectionString,UshahidiUser eventCreator,String eventTitle)
+  {
+    return false;
+  }
+  
+  
+  /*
+   * We return a short summary of the UshahidiEvent Object
+   */
+  public String toString()
+  {
+    return "No summary yet";
+  }
+  
+  
+  /*
+   * We return an array of all UshahidiEvents on  the website created
+   * by the same eventCreator as the creator of this object
+   */
+  public UshahidiEvent[] FindEventsBySameCreator(URLString connectionString)
   {
     return null;
-  } // getEventTitle()
+  }
   
-  
-  
-  /**
-   * Get the name of the location
-   */
-  public String getLocationName()
-  {
-    return null;
-  } // getLocationName()
-  
-  /**
-   * Get the description of the event
-   */
-  public String getDescription()
-  {
-    return null;
-  } // getDescription()
-  
-  /**
-   * Get the date and time of the event
-   */
-  public Date getDateAndTimeOfEvent()
-  {
-    return null;
-  } // getDateAndTimeOfEvent()
-  
-  /**
-   * Get the desired respond by date
-   */
-  public Date getRespondByDate()
-  {
-    return null;
-  } // getRespondByDate()
-  
-  /**
-   * Get the category of the event
-   */
-  public Int getCategory()
-  {
-    return null;
-  } // getCategory()
-  
-  /**
-   * Get the priority of the event
-   */
-  public Int getPriority()
-  {
-    return null;
-  } // getPriority()
-  
-  /**
-   * Get the soruce link for news
-   */
-  public URLString getNewsSourceLink()
-  {
-    return null;
-  } // getNewsSourceLink()
-  
-  /**
-   * Get the link for a video
-   */
-  public URLString getExternalVideoLink()
-  {
-    return null;
-  } // getExternalVideoLink()
 }
 
-/**
- * Get the user name/info
+/*
+ * UshahidiUser represents information about a member on Ushahidi 
  */
 public class UshahidiUser
 {
-  private String UserName;
-  private Date UserJoinDate;
+  private int userID;
+  public String userName;
+  public Date userJoinDate;
   
-  /**
-   * Get the owner of this resource.
+  
+  /*
+   * Creates an empty UshahidiUser object
    */
-  public UshahidiUser getOwner()
+  public UshahidiUser()
   {
-    return null;
+  }
+  
+  /*
+   * Creates a UshahidiUser object with the given data
+   */
+  public UshahidiUser(String UserName,Date UserJoinDate)
+  {
+  }
+  
+  
+  /*
+   * Tries to connect with the server and get a unique user
+   * ID assigned to the UshahidiUser object. Returns the
+   * userID on success, 0 otherwise
+   * success, false otherwise
+   */
+  public boolean SetUserID(URLString connectionString)
+  {
+    return false;
+  }
+  
+  /*
+   * Returns the current UshahidiUser's userID, 0 if the user
+   * does not have one assigned
+   */
+  public int GetUserID()
+  {
+    return 0;
+  }
+  
+  /*
+   *Returns users first name 
+   */
+  public String GetFirstName()
+  {
+    return "John";
   } // getOwner()
   
-  /**
-   * Get the name of the owner of this resource.
+  /*
+   * Returns users last name
    */
-  public String getOwnerName()
+  public String GetLastName()
   {
-    return "Ryan Smith";
+    return "Doe";
   } // getOwnerName()
 }
 
-/**
+/*
  * This class holds a geographical location
  */
 public class Coordinate
 {
-  private int Latitude[];
-  private int Longitude[];
-  /**
-   * Get the latitude
-   */
-  public int getLatitude()
+  public int Latitude[];
+  public int Longitude[];
+  
+  //Constructs a Coordinate Object
+  public Coordinate(int[] Latitude, int[] Longitude)
   {
-    return null;
-  } // getCoordinate()
-  /**
-   * Get the longitude
+  }
+  
+  /*
+   * Returns a string representation of the Coordinate object
    */
-  public int getLongitude()
+  public int getString()
   {
-    return null;
+    return "A place far far away";
   } // getCoordinate()
+
 }
