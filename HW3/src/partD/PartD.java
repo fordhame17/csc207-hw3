@@ -3,6 +3,7 @@ import java.lang.String;
 
 public class PartD
 {
+  //We go through some test runs
   public static void main(String[] args)
   {
     NameGame("William");
@@ -44,15 +45,5 @@ public class PartD
     System.out.println(name+", "+name+" bo B"+endOfName+" Bonana fanna fo F"+endOfName);
     System.out.println("Fee fy mo M"+endOfName+", "+name+"!");
   }
-  
-  
-  /*
-  Shirley! 
-  Shirley, Shirley bo Birley Bonana fanna fo Firley 
-  Fee fy mo Mirley, Shirley!
 
-  Lincoln! 
-  Lincoln, Lincoln bo Bincoln Bonana fanna fo Fincoln 
-  Fee fy mo Mincoln, Lincoln!
-  */
 }
