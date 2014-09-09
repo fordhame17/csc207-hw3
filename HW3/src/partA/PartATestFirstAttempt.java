@@ -1,8 +1,8 @@
 package partA;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.*; // allow Assertions
 
-import org.junit.Test;
+import org.junit.Test; // allow Testing
 
 public class PartATestFirstAttempt
 {
@@ -18,13 +18,13 @@ public class PartATestFirstAttempt
           {
             assertEquals("Test Even", false, PartA.isOdd(i));
             counter = 1;
-          } // if true
+          } // if equal zero
         else
           {
             assertEquals("Test Odd", true, PartA.isOdd(i));
             counter = 0;
           } // else
-      } // for
+      } // for all integers
   } // test_isOdd
 
   @Test
@@ -41,15 +41,15 @@ public class PartATestFirstAttempt
                 if (i==j*k)
                   {
                   isMultiple=true;
-                  }
-              }
+                  } // if multiple
+              } // for
             if (isMultiple!=PartA.isMultiple(i, j))
               {
                 System.out.println("Bad news, i"+i+" j="+j);
-              }
+              } // if
             assertEquals("Test General Multiples",isMultiple,PartA.isMultiple(i, j));
-          }
-      }
+          } // for j
+      } // for i
   } // test_isMultiple
 
   @Test
@@ -63,10 +63,10 @@ public class PartATestFirstAttempt
         for (int count = 1; count < testNumber; count = count + 2)
           {
             sum = sum + count;
-          }
+          } // for count
         assertEquals("Test Various Numbers", sum, PartA.oddSumTo(testNumber));
         testNumber++;
-      }
+      } // while under 25
   } // test_oddSumTo
 
   @Test
@@ -107,9 +107,9 @@ public class PartATestFirstAttempt
           {
             arrayToTest[j] = j;
             arrayToTestReverse[i - j - 1] = j;
-          } // for
+          } // for j
         assertArrayEquals(arrayToTestReverse, PartA.reverseInts(arrayToTest));
-      }  // for
+      }  // for i
   }// test_reverseInts 
 
-}
+} // PartATestFirstAttempt
